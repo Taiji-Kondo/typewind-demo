@@ -1,6 +1,7 @@
 import {tw} from "typewind";
 import {useState} from "react";
 import {eventPackageUsedInGetServerSideProps} from "next/dist/telemetry/events";
+import clsx from "clsx";
 
 export default function Home() {
   const [isError, setIsError] = useState(false)
@@ -30,6 +31,8 @@ export default function Home() {
       <div className={isError ? tw.text_red_500.mt_2 : tw.text_black.mt_2}>OK label1</div>
       {/* ↓ OK */}
       <div className={`${tw.mt_2} ${isError ? tw.text_red_500 : tw.text_black}`}>OK label2</div>
+      {/* ↓ OK */}
+      <div className={clsx(tw.mt_2, isError ? tw.text_red_500 : tw.text_black)}>OK label3</div>
       <input className={tw.border.border_gray_500} value={text} onChange={(event) => setText(event.currentTarget.value)}/>
       <button className={tw.block.bg_blue_200.p_2.rounded.mt_1} onClick={onSubmit}>Submit</button>
       <button className={tw.block.bg_gray_300.p_2.rounded.mt_1} onClick={onRestError}>Reset Error</button>
