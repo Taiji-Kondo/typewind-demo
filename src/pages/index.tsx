@@ -1,6 +1,5 @@
 import {tw} from "typewind";
 import {useState} from "react";
-import {eventPackageUsedInGetServerSideProps} from "next/dist/telemetry/events";
 import clsx from "clsx";
 
 export default function Home() {
@@ -36,6 +35,12 @@ export default function Home() {
       <input className={tw.border.border_gray_500} value={text} onChange={(event) => setText(event.currentTarget.value)}/>
       <button className={tw.block.bg_blue_200.p_2.rounded.mt_1} onClick={onSubmit}>Submit</button>
       <button className={tw.block.bg_gray_300.p_2.rounded.mt_1} onClick={onRestError}>Reset Error</button>
+
+      <div className={tw.$container}>
+        <div className={tw.$lg(tw.underline)}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, non.
+        </div>
+      </div>
     </>
   )
 }
